@@ -79,7 +79,7 @@ const RegistrationForm = (props) => {
 
   const validPasswords = repeatedPassword === enteredPassword;
 
-  const formSubmissionHandler = (event) => {
+  const formSubmissionHandler = async (event) => {
     event.preventDefault();
 
     if (
@@ -114,21 +114,58 @@ const RegistrationForm = (props) => {
       "Date",
       enteredDate
     );
+    let formIsValid = false;
+
+    if (
+      enteredNameIsValid &&
+      enteredEmailIsValid &&
+      enteredIdIsValid &&
+      enteredNumberIsValid &&
+      passwordIsValid &&
+      repeatedPasswordIsValid &&
+      genderIsValid
+    ) {
+      formIsValid = true;
+    }
+    if (formIsValid) {
+        const userData = {
+          name: enteredName,
+          id: enteredId,
+          date: enteredDate,
+          gender: enteredGender,
+          number:enteredNumber,
+          email: enteredEmail,
+          password: enteredPassword,
+
+
+        };
+    
+        try {
+          const response = await fetch('https://food-app-8adf3-default-rtdb.firebaseio.com/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData),
+          });
+    
+          if (response.ok) {
+           console.log('data was sent')
+          } else {
+            console.log('data was not sent')
+          }
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    
+    
   };
 
-  let formIsValid = false;
+ 
 
-  if (
-    enteredNameIsValid &&
-    enteredEmailIsValid &&
-    enteredIdIsValid &&
-    enteredNumberIsValid &&
-    passwordIsValid &&
-    repeatedPasswordIsValid &&
-    genderIsValid
-  ) {
-    formIsValid = true;
-  }
+
+
 
   return (
     <Container>

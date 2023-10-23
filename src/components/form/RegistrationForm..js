@@ -202,6 +202,7 @@ const RegistrationForm = (props) => {
             {genderHasError && (
               <p className={classes.texterror}>Select Gender!</p>
             )}
+            
           </div>
           <div
             className={`${classes.two} ${

@@ -5,8 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+*{
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "BPG Nino Mtavruli";
+  src: url("./fonts/BPGNinoMedium.woff") format("woff2"),
+    url("./fonts/BPGNinoMtavruli.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: "BPG Nino Mtavruli";
+  src: url("./fonts/BPGNinoMtavruli-Bold.woff2") format("woff2"),
+    url("./fonts/BPGNinoMtavruli-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BPG Nino";
+  src: url("./fonts/BPGNinoMedium.woff2") format("woff2"),
+    url("./fonts/BPGNinoMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

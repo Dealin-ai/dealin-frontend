@@ -128,44 +128,38 @@ const RegistrationForm = (props) => {
       formIsValid = true;
     }
     if (formIsValid) {
-        const userData = {
-          name: enteredName,
-          id: enteredId,
-          date: enteredDate,
-          gender: enteredGender,
-          number:enteredNumber,
-          email: enteredEmail,
-          password: enteredPassword,
+      const userData = {
+        name: enteredName,
+        id: enteredId,
+        date: enteredDate,
+        gender: enteredGender,
+        number: enteredNumber,
+        email: enteredEmail,
+        password: enteredPassword,
+      };
 
-
-        };
-    
-        try {
-          const response = await fetch('https://food-app-8adf3-default-rtdb.firebaseio.com/', {
-            method: 'POST',
+      try {
+        const response = await fetch(
+          "https://food-app-8adf3-default-rtdb.firebaseio.com/",
+          {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(userData),
-          });
-    
-          if (response.ok) {
-           console.log('data was sent')
-          } else {
-            console.log('data was not sent')
           }
-        } catch (error) {
-          console.log(error)
+        );
+
+        if (response.ok) {
+          console.log("data was sent");
+        } else {
+          console.log("data was not sent");
         }
+      } catch (error) {
+        console.log(error);
       }
-    
-    
+    }
   };
-
- 
-
-
-
 
   return (
     <Container>
@@ -239,7 +233,6 @@ const RegistrationForm = (props) => {
             {genderHasError && (
               <p className={classes.texterror}>Select Gender!</p>
             )}
-            
           </div>
           <div
             className={`${classes.two} ${

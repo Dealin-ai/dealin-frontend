@@ -248,7 +248,7 @@ const RegistrationForm = (props) => {
               id="phonenumber"
             />
             {enteredNumberHasError && (
-              <p className={classes.texterror}>Id must not be empty!</p>
+              <p className={classes.texterror}>Number must not be empty!</p>
             )}
           </div>
           <div
@@ -263,7 +263,7 @@ const RegistrationForm = (props) => {
               id="email"
             />
             {emailHasError && (
-              <p className={classes.texterror}>Name must not be empty!</p>
+              <p className={classes.texterror}>Email must not be empty!</p>
             )}
           </div>
           <div
@@ -280,7 +280,7 @@ const RegistrationForm = (props) => {
               id="password"
             />
             {passwordHasError && (
-              <p className={classes.texterror}>Name must not be empty!</p>
+              <p className={classes.texterror}>Password must not be empty!</p>
             )}
           </div>
           <div
@@ -297,7 +297,7 @@ const RegistrationForm = (props) => {
               id="passwordrepeate"
             />
             {repeatetPasswordHasError && (
-              <p className={classes.texterror}>Name must not be empty!</p>
+              <p className={classes.texterror}>Password must not be empty!</p>
             )}
             {!validPasswords && (
               <p className={classes.texterror}>Password Is Invalid!</p>

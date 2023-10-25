@@ -1,0 +1,54 @@
+header a{
+    text-decoration: none;
+    color:#363435;
+}
+.header{
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+.image{
+    width: 235px;
+    height: 56px;
+    overflow: hidden;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.links{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+   
+}
+.link{
+    font-size: 20px;
+    font-family: 'BPG Nino Mtavruli';
+    font-weight: 600;
+    margin: 0 0 0 30px;  
+}
+.links li{
+    list-style: none;
+}
+
+.lang{
+    display: flex;
+    align-items: center;
+   
+}
+.lang span{
+    font-size: 20px;
+    font-family: 'BPG Nino Mtavruli';
+    font-weight: 600;
+    display: inline-block;
+    padding:0 30px;
+    border-right:1px solid #000 ;
+}
+.authorisation{
+    font-size: 20px;
+    font-family: 'BPG Nino Mtavruli';
+    font-weight: 600;
+    padding: 0 0 0 30px;
+}

@@ -128,44 +128,38 @@ const RegistrationForm = (props) => {
       formIsValid = true;
     }
     if (formIsValid) {
-        const userData = {
-          name: enteredName,
-          id: enteredId,
-          date: enteredDate,
-          gender: enteredGender,
-          number:enteredNumber,
-          email: enteredEmail,
-          password: enteredPassword,
+      const userData = {
+        name: enteredName,
+        id: enteredId,
+        date: enteredDate,
+        gender: enteredGender,
+        number: enteredNumber,
+        email: enteredEmail,
+        password: enteredPassword,
+      };
 
-
-        };
-    
-        try {
-          const response = await fetch('https://food-app-8adf3-default-rtdb.firebaseio.com/', {
-            method: 'POST',
+      try {
+        const response = await fetch(
+          "https://food-app-8adf3-default-rtdb.firebaseio.com/",
+          {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(userData),
-          });
-    
-          if (response.ok) {
-           console.log('data was sent')
-          } else {
-            console.log('data was not sent')
           }
-        } catch (error) {
-          console.log(error)
+        );
+
+        if (response.ok) {
+          console.log("data was sent");
+        } else {
+          console.log("data was not sent");
         }
+      } catch (error) {
+        console.log(error);
       }
-    
-    
+    }
   };
-
- 
-
-
-
 
   return (
     <Container>
@@ -239,7 +233,6 @@ const RegistrationForm = (props) => {
             {genderHasError && (
               <p className={classes.texterror}>Select Gender!</p>
             )}
-            
           </div>
           <div
             className={`${classes.two} ${
@@ -255,7 +248,7 @@ const RegistrationForm = (props) => {
               id="phonenumber"
             />
             {enteredNumberHasError && (
-              <p className={classes.texterror}>Id must not be empty!</p>
+              <p className={classes.texterror}>Number must not be empty!</p>
             )}
           </div>
           <div
@@ -270,7 +263,7 @@ const RegistrationForm = (props) => {
               id="email"
             />
             {emailHasError && (
-              <p className={classes.texterror}>Name must not be empty!</p>
+              <p className={classes.texterror}>Email must not be empty!</p>
             )}
           </div>
           <div
@@ -287,7 +280,7 @@ const RegistrationForm = (props) => {
               id="password"
             />
             {passwordHasError && (
-              <p className={classes.texterror}>Name must not be empty!</p>
+              <p className={classes.texterror}>Password must not be empty!</p>
             )}
           </div>
           <div
@@ -304,7 +297,7 @@ const RegistrationForm = (props) => {
               id="passwordrepeate"
             />
             {repeatetPasswordHasError && (
-              <p className={classes.texterror}>Name must not be empty!</p>
+              <p className={classes.texterror}>Password must not be empty!</p>
             )}
             {!validPasswords && (
               <p className={classes.texterror}>Password Is Invalid!</p>

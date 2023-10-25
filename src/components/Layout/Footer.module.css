@@ -1,0 +1,82 @@
+footer a{
+  text-decoration: none;
+  color: #363435;
+}
+.footertop {
+  display: flex;
+  padding: 50px 0 30px 0;
+  border-top: 4px solid rgba(0, 178, 217, 0.2);
+  border-bottom:4px solid rgba(0, 178, 217, 0.2) ;
+}
+.footerimage {
+  width: 235px;
+  height: 56px;
+  overflow: hidden;
+}
+.footerimage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.links {
+  width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 160px;
+}
+.links li{
+  list-style: none;
+  margin: 0 0 35px 30px;
+
+}
+.links li a{
+  text-decoration: none;
+  color: #363435;
+  font-size: 20px;
+  font-family: "BPG Nino Mtavruli";
+  font-weight: 600;
+
+}
+
+.footericontitle {
+  margin-left: auto;
+}
+.footericontitle h4 {
+  font-size: 22px;
+  font-family: "BPG Nino Mtavruli";
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  color: #363435;
+}
+.footericon {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: #dbd5d8;
+  border-radius: 50%;
+  margin: 0 30px 0 0;
+}
+.footerbottom{
+    display: flex;
+    align-self: center;
+    padding: 30px 0 50px 0;
+}
+.footerlink{
+    font-size: 20px;
+    font-family: "BPG Nino Mtavruli";
+    font-weight: 600;
+   margin: 0 60px 0 0;
+}
+.footerlastlink{
+    font-size: 20px;
+    font-family: "BPG Nino Mtavruli";
+    font-weight: 600;
+    margin-left: auto;
+    color: #363435;
+}

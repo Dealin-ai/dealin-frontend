@@ -2,6 +2,7 @@ import React from "react";
 import useInput from "../../hooks/use-input";
 import Container from "../UI/Container";
 import Card from "../UI/Card";
+import axios from "axios";
 import classes from "./RegistrationForm.module.css";
 
 const RegistrationForm = (props) => {
@@ -77,6 +78,13 @@ const RegistrationForm = (props) => {
     reset: dateResetHandler,
   } = useInput((value) => value.trim() !== "");
 
+  const {
+    value: enteredLastname,
+    isValid: lastnameIsValid,
+    hasError: lastnameHasError,
+    valueChangeHandler: lastnameCHangeHandler,
+    inputBlureHandler: lastnameBlureHandler,
+  } = useInput((value) => value.trim() !== "");
   const validPasswords = repeatedPassword === enteredPassword;
 
   const formSubmissionHandler = async (event) => {
@@ -88,7 +96,8 @@ const RegistrationForm = (props) => {
       !enteredIdIsValid &&
       !enteredNumberIsValid &&
       !passwordIsValid &&
-      !dateIsValid
+      !dateIsValid &&
+      !lastnameIsValid
     ) {
       return;
     }
@@ -96,26 +105,17 @@ const RegistrationForm = (props) => {
       console.log("invalid password");
       return;
     }
-    nameResetHandler();
-    emailResetHandler();
-    idResetHandler();
-    numberResetHandler();
-    passwordResetHandler();
-    repeatedPasswordResetHandler();
-    genderResetHandler();
-    dateResetHandler();
-    console.log(
-      enteredEmail,
-      enteredId,
-      enteredName,
-      enteredPassword,
-      repeatedPassword,
-      enteredGender,
-      "Date",
-      enteredDate
-    );
-    let formIsValid = false;
+    // nameResetHandler();
+    // emailResetHandler();
+    // idResetHandler();
+    // numberResetHandler();
+    // passwordResetHandler();
+    // repeatedPasswordResetHandler();
+    // genderResetHandler();
+    // dateResetHandler();
 
+    let formIsValid = false;
+    console.log(enteredDate.toString(), "birthdate");
     if (
       enteredNameIsValid &&
       enteredEmailIsValid &&
@@ -129,34 +129,25 @@ const RegistrationForm = (props) => {
     }
     if (formIsValid) {
       const userData = {
-        name: enteredName,
-        id: enteredId,
-        date: enteredDate,
+        lastName: enteredLastname,
+        firstName: enteredName,
+        idCardNumber: enteredId,
+        birthDate: enteredDate,
         gender: enteredGender,
-        number: enteredNumber,
+        phoneNumber: enteredNumber,
         email: enteredEmail,
         password: enteredPassword,
       };
 
       try {
-        const response = await fetch(
-          "https://food-app-8adf3-default-rtdb.firebaseio.com/",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData),
-          }
+        const data = await axios.post(
+          "http://localhost:3000/user/signup",
+          userData
         );
-
-        if (response.ok) {
-          console.log("data was sent");
-        } else {
-          console.log("data was not sent");
-        }
+        console.log(data.data);
       } catch (error) {
-        console.log(error);
+        console.log(error.response.data.message);
+        alert(error.response.data.message);
       }
     }
   };
@@ -172,7 +163,7 @@ const RegistrationForm = (props) => {
           <div
             className={`${classes.one} ${nameHasError ? classes.invalid : ""}`}
           >
-            <label htmlFor="name">სახელი გვარი</label>
+            <label htmlFor="name">სახელი </label>
             <input
               value={enteredName}
               onChange={nameChangeHandler}
@@ -182,6 +173,21 @@ const RegistrationForm = (props) => {
             />
             {nameHasError && (
               <p className={classes.texterror}>Name must not be empty!</p>
+            )}
+          </div>
+          <div
+            className={`${classes.one} ${nameHasError ? classes.invalid : ""}`}
+          >
+            <label htmlFor="name">გვარი</label>
+            <input
+              value={enteredLastname}
+              onChange={lastnameCHangeHandler}
+              onBlur={lastnameBlureHandler}
+              type="text"
+              id="lastname"
+            />
+            {lastnameHasError && (
+              <p className={classes.texterror}>Lastname must not be empty!</p>
             )}
           </div>
           <div
@@ -227,8 +233,8 @@ const RegistrationForm = (props) => {
               id="gender"
               name="gender"
             >
-              <option value="male">male</option>
-              <option value="female">female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
             {genderHasError && (
               <p className={classes.texterror}>Select Gender!</p>

@@ -141,10 +141,10 @@ const RegistrationForm = (props) => {
 
       try {
         const data = await axios.post(
-          "http://localhost:3000/user/signup",
+          `${process.env.REACT_APP_SERVER_HOST}/user/signup`,
           userData
         );
-        console.log(data.data);
+        alert("code has sent to your number");
       } catch (error) {
         console.log(error.response.data.message);
         alert(error.response.data.message);

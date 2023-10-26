@@ -1,14 +1,7 @@
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
-    row-gap: 40px;
-}
+
 
 .newscard{
     position: relative;
-    width: 32%;
     height: 700px;
     display: flex;
     flex-direction: column;
@@ -49,4 +42,7 @@
 .newslink{
     text-decoration: none;
     color: #363435;
+    display: block;
+    width: 32%;
+    height: 700px;
 }

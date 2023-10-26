@@ -1,0 +1,9 @@
+.newscard{
+    display: flex;
+    width: 100%;
+    overflow-x: scroll; /* Standard property */
+    -webkit-overflow-x: scroll; /* Webkit (Safari, Chrome) */
+    -ms-overflow-x: scroll; /* Internet Explorer */
+    scroll-snap-type: mandatory;
+    flex-wrap: nowrap;
+}

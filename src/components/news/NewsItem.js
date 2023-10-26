@@ -7,7 +7,7 @@ import newsimage from "../../assets/images/newsbackground1.png";
 const NewsItem = (props) => {
   return (
     <Link to="/news/newsdetail" className={classes.newslink}>
-      <div className={classes.flex}>
+
         <div className={classes.newscard}>
           <img src={newsimage} alt={"news"} />
           <div className={classes.newstop}>
@@ -18,10 +18,10 @@ const NewsItem = (props) => {
             </div>
           </div>
           <div className={classes.news3}>
-            რა შესაძლებლობებს გაძლევს DEALIN-ს?
+           {props.title}
           </div>
         </div>
-      </div>
+   
     </Link>
   );
 };

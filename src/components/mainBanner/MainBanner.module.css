@@ -38,25 +38,81 @@
 .imagecard {
   position: relative;
   width: 50%;
-min-height: 600px;
-
+  min-height: 600px;
 }
 .imagecard img {
-    position: absolute;
+  position: absolute;
 }
-.imgae2{
-   top: 0;
-   left: 0;
+.imgae2 {
+  top: 0;
+  left: 0;
 }
-.imgae3{
-    top: 220px;
-    left: 50px;
+.imgae3 {
+  top: 220px;
+  left: 50px;
 }
-.imgae4{
-   right: 0;
-   bottom: 0;
+.imgae4 {
+  right: 0;
+  bottom: 0;
 }
-.imgae1{
-    top: 55px;
-    left: 240px;
+.imgae1 {
+  top: 55px;
+  left: 240px;
+}
+
+.title {
+  width: 50%;
+}
+.title h1 {
+  font-size: 96px;
+  font-weight: 700;
+  font-family: "BPG Nino Mtavruli";
+  line-height: 116px;
+  margin: 40px 0;
+}
+.banner a {
+  position: relative;
+  display: inline-block;
+  padding: 34px 146px 26px 146px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 50px;
+  font-family: "BPG Nino Mtavruli";
+  font-weight: 600;
+  color: #363435;
+  transition-duration: 3s;
+}
+.banner a::after {
+  position: absolute;
+  content: "";
+  inset: -2px;
+  background: linear-gradient(45deg, #00b2d9, #f26a21);
+  z-index: -1;
+  border-radius: 12px;
+}
+
+.imagecard {
+  position: relative;
+  width: 50%;
+  min-height: 600px;
+}
+.imagecard img {
+  position: absolute;
+}
+.imgae2 {
+  top: 0;
+  left: 0;
+}
+.imgae3 {
+  top: 220px;
+  left: 50px;
+}
+.imgae4 {
+  right: 0;
+  bottom: 0;
+}
+.imgae1 {
+  top: 55px;
+  left: 240px;
 }

@@ -1,11 +1,15 @@
-import MaunBanner from '../components/mainBanner/MainBanner'
+
+import MainBanner from '../components/mainBanner/MainBanner'
+
 
 const HomePage = (props) => {
   return (
     <>
       <div className="App">
         <main>
-      <MaunBanner />
+
+      <MainBanner />
+
         </main>
       </div>
     </>

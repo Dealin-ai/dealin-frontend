@@ -1,9 +1,11 @@
+import MainBanner from '../components/mainBanner/MainBanner'
+
 const HomePage = (props) => {
   return (
     <>
       <div className="App">
         <main>
-      <h1>Main Page</h1>
+      <MainBanner />
         </main>
       </div>
     </>

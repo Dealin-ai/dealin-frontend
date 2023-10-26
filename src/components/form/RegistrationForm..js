@@ -241,7 +241,7 @@ const RegistrationForm = (props) => {
             )}
           </div>
           <div
-            className={`${classes.two} ${
+            className={`${classes.one} ${
               enteredNumberHasError ? classes.invalid : ""
             }`}
           >

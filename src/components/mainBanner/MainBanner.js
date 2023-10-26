@@ -6,7 +6,9 @@ import assetSeaze from "../../assets/images/SEIZE.png";
 import assetDeal from "../../assets/images/DEAL.png";
 import assetThe from "../../assets/images/THE.png";
 
+
 const MainBanner = () => {
+
   return (
     <Container>
       <div className={classes.banner}>
@@ -25,4 +27,6 @@ const MainBanner = () => {
   );
 };
 
+
 export default MainBanner;
+

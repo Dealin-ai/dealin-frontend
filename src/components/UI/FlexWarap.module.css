@@ -1,0 +1,17 @@
+.flex{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    flex-wrap: wrap;
+}
+.flexnowrap{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    overflow-x: scroll;
+    height: 750px;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    margin: 0 0 100px 0;
+}

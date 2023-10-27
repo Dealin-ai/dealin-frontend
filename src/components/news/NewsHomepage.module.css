@@ -1,9 +1,12 @@
-.newscard{
-    display: flex;
-    width: 100%;
-    overflow-x: scroll; /* Standard property */
-    -webkit-overflow-x: scroll; /* Webkit (Safari, Chrome) */
-    -ms-overflow-x: scroll; /* Internet Explorer */
-    scroll-snap-type: mandatory;
-    flex-wrap: nowrap;
+
+.h1 h1{
+  font-size: 64px;
+  font-weight: 600;
+  font-family: "BPG Nino Mtavruli";
+  margin: 0 0 50px 0;
+  color: #000;
+}
+.flexauto {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }

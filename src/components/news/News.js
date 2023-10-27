@@ -1,6 +1,7 @@
 import Container from "../UI/Container";
 import classes from "./News.module.css";
 import NewsItem from "./NewsItem";
+import { FlexWrap } from '../UI/FelxWrap'
 
 const DUMMY_NEWS = [
   {
@@ -26,17 +27,18 @@ const DUMMY_NEWS = [
 
 ];
 
-export const News = () =>{
+export const News = (props) =>{
   return (
-    <>
+   <>
       {DUMMY_NEWS.map((newsitem) => (
       <NewsItem
+        classname={props.classname}
         key={newsitem.id}
         id={newsitem.id}
         title={newsitem.title}
       />
     ))}
-    </>
+</>
   )
 }
 
@@ -47,9 +49,9 @@ const NewsList = () => {
         <div className={classes.newstitle}>
           <h1>სიახლეები</h1>
         </div>
-        <div className={classes.flex}>
+        <FlexWrap>
           <News />
-        </div>
+          </FlexWrap>
       </div>
     </Container>
   );

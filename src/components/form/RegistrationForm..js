@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import useInput from "../../hooks/use-input";
 import Container from "../UI/Container";
+import ErrorModal from "./ErrorModal";
 import Card from "../UI/Card";
 import axios from "axios";
 import classes from "./RegistrationForm.module.css";
 
 const RegistrationForm = (props) => {
+  const [errorMessage, seterrorMessage] = useState(null);
+
+  const [isErrorModalVisible, setErrorModalVisible] = useState(true);
+  const [formInvalidModal, setFormInvalidModal] = useState(false);
+
+
+
+ 
+  const hideErrorModal = () => {
+    setErrorModalVisible(false);
+  };
+
   const {
     value: enteredName,
     isValid: enteredNameIsValid,
@@ -31,7 +44,7 @@ const RegistrationForm = (props) => {
     valueChangeHandler: idChangeHandler,
     inputBlureHandler: idBlurHandler,
     reset: idResetHandler,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => value.trim().length === 11);
 
   const {
     value: enteredNumber,
@@ -84,11 +97,14 @@ const RegistrationForm = (props) => {
     hasError: lastnameHasError,
     valueChangeHandler: lastnameCHangeHandler,
     inputBlureHandler: lastnameBlureHandler,
+    reset: lastnameResetHandler,
   } = useInput((value) => value.trim() !== "");
   const validPasswords = repeatedPassword === enteredPassword;
 
   const formSubmissionHandler = async (event) => {
     event.preventDefault();
+ 
+
 
     if (
       !enteredNameIsValid &&
@@ -105,17 +121,19 @@ const RegistrationForm = (props) => {
       console.log("invalid password");
       return;
     }
-    // nameResetHandler();
-    // emailResetHandler();
-    // idResetHandler();
-    // numberResetHandler();
-    // passwordResetHandler();
-    // repeatedPasswordResetHandler();
-    // genderResetHandler();
-    // dateResetHandler();
+   /*   nameResetHandler();
+     lastnameResetHandler();
+     emailResetHandler();
+     idResetHandler();
+     numberResetHandler();
+     passwordResetHandler();
+     repeatedPasswordResetHandler();
+     genderResetHandler();
+     dateResetHandler(); */
 
     let formIsValid = false;
-    console.log(enteredDate.toString(), "birthdate");
+   
+    
     if (
       enteredNameIsValid &&
       enteredEmailIsValid &&
@@ -126,7 +144,15 @@ const RegistrationForm = (props) => {
       genderIsValid
     ) {
       formIsValid = true;
+  
     }
+
+    if(!formIsValid){
+      setFormInvalidModal(true)
+     
+    }
+
+
     if (formIsValid) {
       const userData = {
         lastName: enteredLastname,
@@ -140,14 +166,20 @@ const RegistrationForm = (props) => {
       };
 
       try {
-        const data = await axios.post(
-          "http://localhost:3000/user/signup",
+        const response = await axios.post(
+          "http://3.87.117.73:3000/user/signup",
           userData
         );
-        console.log(data.data);
+        if (response.status === 200) {
+    
+          console.log(response.data);
+      }
+        console.log(response.data);
       } catch (error) {
         console.log(error.response.data.message);
-        alert(error.response.data.message);
+
+        seterrorMessage(error.response.data.message);
+        
       }
     }
   };
@@ -308,12 +340,15 @@ const RegistrationForm = (props) => {
             {!validPasswords && (
               <p className={classes.texterror}>Password Is Invalid!</p>
             )}
+           
           </div>
           <div className={classes.button}>
             <button>რეგისტრაცია</button>
           </div>
         </form>
       </Card>
+      {formInvalidModal && isErrorModalVisible && <ErrorModal onClose={hideErrorModal}><p>Please complete all inputs</p></ErrorModal>}
+      {errorMessage && isErrorModalVisible && <ErrorModal onClose={hideErrorModal}>{errorMessage}</ErrorModal>}
     </Container>
   );
 };

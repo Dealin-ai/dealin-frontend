@@ -2,6 +2,9 @@ header a{
     text-decoration: none;
     color:#363435;
 }
+.nav{
+    margin-left: auto;
+}
 .header{
     display: flex;
     align-items: center;
@@ -38,6 +41,10 @@ header a{
     align-items: center;
    
 }
+.nav{
+    display: flex;
+    align-items: center;
+}
 .lang span{
     font-size: 20px;
     font-family: 'BPG Nino Mtavruli';
@@ -51,4 +58,86 @@ header a{
     font-family: 'BPG Nino Mtavruli';
     font-weight: 600;
     padding: 0 0 0 30px;
+}
+.burgericon {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+.burgericon span{
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #EB6E30;
+    margin: 5px 0;
+}
+.burgericon span:last-of-type{
+    width: 16px;
+    margin-left: auto;
+}
+
+@media (max-width: 1620px) {
+    .image{
+        width: 188px;
+        height: 45px;
+    }
+}
+@media (max-width: 1400px){
+    .nav{
+        display: none;
+    }
+    .burgernav{
+        background-color:#fff;
+        flex-direction: column;
+        height: initial;
+        position: absolute;
+        justify-content: center;
+        padding: 50px;
+        top: 90px;
+        right: 0;
+       z-index: 100;
+       text-align: center;
+       box-shadow: 0 50px 50px 20px rgba(0,0,0,0.1);
+    }
+    .burgerlinks{
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+
+    }
+    .burgerlinks li{
+        margin: 0 0 20px 0;
+        list-style: none;
+    }
+    .burgerlink{
+        margin: 0 0 20px 0;
+        font-family: 'BPG Nino Mtavruli';
+        font-weight: 600;
+        color:#363435;
+        font-size: 20px;
+    }
+    .burgerlang{
+        flex-direction: column;
+        font-family: 'BPG Nino Mtavruli';
+        font-weight: 600;
+        font-size: 20px;
+        margin: 0 0 20px 0;
+    }
+   
+    .burgerlang span{
+        border: none;
+        padding: 0;
+        margin: 10px 20px;
+    }
+    .burgerauthorisation{
+       padding: 0;
+       font-family: 'BPG Nino Mtavruli';
+       font-weight: 600;
+       font-size: 20px;
+    }
+    .burgericon{
+        display: block;
+    }
+  
 }

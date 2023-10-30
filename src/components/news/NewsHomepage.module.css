@@ -10,3 +10,11 @@
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
+
+@media (max-width: 1620px) {}
+@media (max-width: 1400px){
+  .h1 h1{
+    font-size: 30px;
+    margin: 0 0 24px 0;
+  }
+}

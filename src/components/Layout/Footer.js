@@ -16,6 +16,7 @@ const Footer = (props) => {
               <img src={footerImgage} alt="footer" />
             </Link>
           </div>
+          
           <ul className={classes.links}>
             <li>
               {" "}

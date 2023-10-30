@@ -81,8 +81,12 @@
   font-family: "BPG Nino Mtavruli";
   font-weight: 600;
   color: #363435;
-  transition-duration: 3s;
+  transition-duration: .3s;
 }
+.banner a:hover{
+  background: linear-gradient(45deg, rgba(0, 178, 217, 0.5), rgba(242, 106, 33, 0.5));
+}
+
 .banner a::after {
   position: absolute;
   content: "";

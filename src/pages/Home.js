@@ -1,5 +1,7 @@
 import MainBanner from '../components/mainBanner/MainBanner';
 import NewsHomepage from '../components/news/NewsHomepage'
+import MainScrollbar from '../components/MainScrollbar/MainScrollbar';
+
 
 const HomePage = (props) => {
   return (
@@ -7,8 +9,9 @@ const HomePage = (props) => {
       <div className="App">
         <main>
       <MainBanner />
+      <MainScrollbar />
       <NewsHomepage />
-      
+     
         </main>
       </div>
     </>

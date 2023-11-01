@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import classes from "./MainBanner.module.css";
 import Container from "../UI/Container";
 import asset1 from "../../assets/images/Asset 1@4x 3.png";
@@ -15,10 +16,25 @@ const MaunBanner = () => {
           <Link>დაიწყე ახლა!</Link>
         </div>
         <div className={classes.imagecard}>
-          <img className={classes.imgae1} src={asset1} alt={"asset"} />
-          <img className={classes.imgae2} src={assetSeaze} alt={"seaze"} />
-          <img className={classes.imgae3} src={assetThe} alt={"the"} />
-          <img className={classes.imgae4} src={assetDeal} alt={"deal"} />
+          <motion.img
+            initial={{ opacity: 0, scale: 0.5, y: 30}}
+            animate={{ opacity: 1, scale: 1, transition: { duration: 1,  type: "spring", }, y: 0}}
+            className={classes.imgae1}
+            src={asset1}
+            alt={"asset"}
+          />
+          <motion.img
+          initial={{ opacity: 0, scale: 0.5, y: -50}}
+          animate={{ opacity: 1, scale: 1, transition: { duration: 1,  type: "spring", }, y: 0}}
+          className={classes.imgae2} src={assetSeaze} alt={"seaze"} />
+          <motion.img 
+           initial={{ opacity: 0, scale: 0.5, x: -100}}
+           animate={{ opacity: 1, scale: 1, transition: { duration: 1,  type: "spring", }, x: 0}}
+          className={classes.imgae3} src={assetThe} alt={"the"} />
+          <motion.img
+           initial={{ opacity: 0, scale: 0.5, y: 50}}
+           animate={{ opacity: 1, scale: 1, transition: { duration: 1,  type: "spring", }, y: 0}}
+          className={classes.imgae4} src={assetDeal} alt={"deal"} />
         </div>
       </div>
     </Container>

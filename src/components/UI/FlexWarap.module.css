@@ -19,6 +19,10 @@
     .flexnowrap{
         height: 600px;
     }
+    .flex{
+        column-gap: 20px;
+    }
+    
 }
 @media (max-width: 1400px){
     .flexnowrap{
@@ -26,9 +30,19 @@
            margin: 0 0 70px 0;
            column-gap: 20px;
     }
+    .flex{
+        column-gap: 10px;
+       row-gap: 20px;
+    }
 }
 @media (max-width: 1200px){}
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+    .flex{
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        scroll-snap-type: x mandatory;
+    }
+}
 @media (max-width: 768px){}
 @media (max-width: 576px){}
 @media (max-width: 440px){}

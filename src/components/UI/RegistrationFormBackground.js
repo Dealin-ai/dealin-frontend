@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Container from "./Container";
 import classes from './RegistrationFormBackground.module.css'
 import seize from "../../assets/images/SEIZE.png";
@@ -10,11 +11,26 @@ const RegistrationFormBackground = (props) => {
   return (
     <Container>
       <div className={classes.background}>
-        <img className={classes.seize} src={seize} alt="img1" />
-        <img className={classes.the} src={the} alt="img2" />
-        <img className={classes.deal} src={deal} alt="img3" />
-        <img className={classes.rocket} src={rocket} alt="img4" />
-        <img className={classes.rockets} src={rockets} alt="img5" />
+        <motion.img 
+        initial={{ opacity: 0, x: -150}}
+        animate={{ opacity: 1, transition: { duration: 1,  type: "spring", }, x: 0}}
+        className={classes.seize} src={seize} alt="img1" />
+        <motion.img 
+         initial={{ opacity: 0, x: 150}}
+         animate={{ opacity: 1, transition: { duration: 1,  type: "spring", }, x: 0}}
+        className={classes.the} src={the} alt="img2" />
+        <motion.img 
+         initial={{ opacity: 0, x: -150}}
+         animate={{ opacity: 1, transition: { duration: 1,  type: "spring", }, x: 0}}
+        className={classes.deal} src={deal} alt="img3" />
+        <motion.img 
+         initial={{ opacity: 0, scale: 0.5, y: 150}}
+         animate={{ opacity: 1, scale:1, transition: { duration: 1,  type: "spring", }, y: 0}}
+        className={classes.rocket} src={rocket} alt="img4" />
+        <motion.img 
+          initial={{ opacity: 0, scale: 0.5, y: 150}}
+          animate={{ opacity: 1, scale: 1, transition: { duration: 1,  type: "spring", }, y: 0}}
+        className={classes.rockets} src={rockets} alt="img5" />
         {props.children}
       </div>
 

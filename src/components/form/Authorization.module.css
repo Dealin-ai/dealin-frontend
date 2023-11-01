@@ -48,3 +48,30 @@
   border-color: #ff8800;
   background-color: #fbe8d2;
 }
+@media (max-width: 1620px){
+  .authorizationForm h1 {
+    font-size: 64px;
+  }
+  .authorizationForm .button button{
+    font-size: 34px;
+    padding: 28px 92px 26px 92px;
+  }
+}
+@media (max-width: 1400px){
+  .authorizationForm h1 {
+    font-size: 50px;
+  }
+  .authorizationForm .button button{
+    font-size: 30px;
+    padding: 30px 77px 28px 77px;
+  }
+}
+@media (max-width: 992px){
+  .authorizationForm h1 {
+    font-size: 30px;
+  }
+  .authorizationForm .button button{
+    font-size: 24px;
+    padding: 20px 40px 18px 40px;
+  }
+}

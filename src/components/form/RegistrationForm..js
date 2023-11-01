@@ -1,9 +1,9 @@
 import React from "react";
 import useInput from "../../hooks/use-input";
-import Container from "../UI/Container";
 import Card from "../UI/Card";
 import axios from "axios";
 import classes from "./RegistrationForm.module.css";
+import RegistrationFormBackground from "../UI/RegistrationFormBackground";
 
 const RegistrationForm = (props) => {
   const {
@@ -153,7 +153,7 @@ const RegistrationForm = (props) => {
   };
 
   return (
-    <Container>
+    <RegistrationFormBackground>
       <Card>
         <form onSubmit={formSubmissionHandler} className={classes.form}>
           <div className={[classes.two, classes.formtitle].join(" ")}>
@@ -314,7 +314,7 @@ const RegistrationForm = (props) => {
           </div>
         </form>
       </Card>
-    </Container>
+    </RegistrationFormBackground>
   );
 };
 

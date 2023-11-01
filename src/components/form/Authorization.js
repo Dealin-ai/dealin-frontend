@@ -2,7 +2,7 @@ import React from "react";
 import useInput from "../../hooks/use-input";
 import classes from "./Authorization.module.css";
 import Card from "../UI/Card";
-import Container from "../UI/Container";
+import AuthorizationBackground from "../UI/AuthorizationBackground";
 
 const Authorization = (props) => {
   const {
@@ -68,7 +68,7 @@ const Authorization = (props) => {
   };
 
   return (
-    <Container>
+    <AuthorizationBackground>
       <Card>
         <form
           onSubmit={formSubmissionHandler}
@@ -108,7 +108,7 @@ const Authorization = (props) => {
           </div>
         </form>
       </Card>
-    </Container>
+    </AuthorizationBackground>
   );
 };
 

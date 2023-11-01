@@ -1,0 +1,70 @@
+.background{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.background img{
+  position: absolute;
+}
+.seize{
+    width: 367px;
+    height: 114px;
+    top: 320px;
+    left: 0;
+}
+.the{
+    width: 204px;
+    height: 86px;
+    top: 452px;
+    right: 156px;
+}
+.deal{
+    width: 367px;
+    height: 114px;
+   bottom: 326px;
+    left: 0;
+}
+.rocket{
+    width: 165px;
+    height: 255px;
+    top: 476px;
+    left: 180px;
+}
+.rockets{
+    width: 307px;
+    height: 326px;
+    bottom: 383px;
+    right: 70px;
+}
+@media (max-width: 1620px){
+    .seize{
+        width: 285px;
+        height: 80px;
+    }
+    .the{
+        width: 203px;
+        height: 86px;
+        right: 40px;
+    }
+    .deal{
+        width: 285px;
+        height: 80px;
+    }
+    .rocket{
+        width: 150px;
+        height: 204px;
+        left: 130px;
+    }
+    .rockets{
+        width: 250px;
+        height: 270px;
+        right: 15px;
+    }
+}
+@media (max-width: 1400px){
+    .background img{
+        display: none;
+      }
+}

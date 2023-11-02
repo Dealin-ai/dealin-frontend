@@ -1,0 +1,29 @@
+
+.newsdetailcontainer h2{
+  font-size: 64px;
+  margin: 50px 0;
+  font-family: 'BPG Nino Mtavruli';
+  font-weight: 600;
+}
+.newsdetaildescrtiption{
+    font-size: 30px;
+    color: #2B3544;
+}
+.newsdetailimages{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin:90px 0;
+    flex-wrap: wrap;
+}
+.newsdetailimage {
+   width: 32%;
+   height: 700px;
+   border-radius: 30px;
+   overflow: hidden;
+}
+.newsdetailimage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useInput from "../../hooks/use-input";
 import Card from "../UI/Card";
 import axios from "axios";
@@ -6,6 +7,10 @@ import classes from "./RegistrationForm.module.css";
 import RegistrationFormBackground from "../UI/RegistrationFormBackground";
 
 const RegistrationForm = (props) => {
+  const navigate = useNavigate();
+  const navigationHandler = () =>{
+    navigate('/registrationcode')
+  }
   const {
     value: enteredName,
     isValid: enteredNameIsValid,
@@ -310,7 +315,7 @@ const RegistrationForm = (props) => {
             )}
           </div>
           <div className={classes.button}>
-            <button>რეგისტრაცია</button>
+            <button onClick={navigationHandler}>რეგისტრაცია</button>
           </div>
         </form>
       </Card>

@@ -1,28 +1,20 @@
-
-import { Link } from "react-router-dom";
 import classes from "./NewsItem.module.css";
 import { HiArrowUpRight } from "react-icons/hi2";
 
 import newsimage from "../../assets/images/newsbackground1.png";
 const NewsItem = (props) => {
   return (
-    <Link to="/news/newsdetail" className={`${classes.newslink} ${props.classname}`}>
-
-        <div className={classes.newscard}>
-          <img src={newsimage} alt={"news"} />
-          <div className={classes.newstop}>
-            <div className={classes.news1}>გაიგე მეტი</div>
-            <div className={classes.news2}>
-              {" "}
-              <HiArrowUpRight />
-            </div>
-          </div>
-          <div className={classes.news3}>
-           {props.title}
-          </div>
+    <div className={classes.newscard}>
+      <img src={newsimage} alt={"news"} />
+      <div className={classes.newstop}>
+        <div className={classes.news1}>გაიგე მეტი</div>
+        <div className={classes.news2}>
+          {" "}
+          <HiArrowUpRight />
         </div>
-   
-    </Link>
+      </div>
+      <div className={classes.news3}>{props.title}</div>
+    </div>
   );
 };
 

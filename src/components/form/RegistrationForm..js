@@ -153,7 +153,7 @@ const RegistrationForm = (props) => {
     }
 
 
-    if (formIsValid) {
+
       const userData = {
         lastName: enteredLastname,
         firstName: enteredName,
@@ -166,22 +166,22 @@ const RegistrationForm = (props) => {
       };
 
       try {
-        const response = await axios.post(
-          "http://3.87.117.73:3000/user/signup",
-          userData
-        );
-        if (response.status === 200) {
+        const response = await axios.post("http://3.87.117.73:3000/user/signup", userData);
     
+        if (response && response.status === 200) {
           console.log(response.data);
-      }
-        console.log(response.data);
+        } else {
+          console.log("Response data is missing or not in the expected format.");
+        }
       } catch (error) {
-        console.log(error.response.data.message);
-
-        seterrorMessage(error.response.data.message);
-        
+        if (error.response && error.response.data && error.response.data.message) {
+          console.log(error.response.data.message);
+          seterrorMessage(error.response.data.message);
+        } else {
+          console.log("Error response is missing or not in the expected format.");
+        }
       }
-    }
+    
   };
 
   return (

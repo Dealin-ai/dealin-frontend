@@ -4,18 +4,11 @@ import classes from "./Authorization.module.css";
 import Card from "../UI/Card";
 import AuthorizationBackground from "../UI/AuthorizationBackground";
 
-const Authorization = (props) => {
-  const {
-    value: enteredEmail,
-    isValid: enteredEmailisValid,
-    hasError: enteredEmailHasError,
-    valueChangeHandler: enteredEmailChangeHAndler,
-    inputBlureHandler: enteredEmailBlureHandler,
-    reset: enteredEmailResetHAndler,
-  } = useInput((value) => value.includes("@"));
+const EmailCodeAuthorization = (props) => {
+ 
 
   const {
-    value: enteredPassword,
+    value: enteredCode,
     isValid: enteredPasswordIsValid,
     hasError: enteredPasswordHasError,
     valueChangeHandler: enteredPasswordChangeHandler,
@@ -26,22 +19,21 @@ const Authorization = (props) => {
   const formSubmissionHandler = async (event) => {
     event.preventDefault();
 
-    if (!enteredEmailisValid && !enteredPasswordIsValid) {
+    if (!enteredPasswordIsValid) {
       return;
     }
     enteredPasswordResetHandler();
-    enteredEmailResetHAndler();
+    
 
-    console.log(enteredEmail, enteredPassword);
+    console.log(enteredCode);
     let formIsValid = false;
 
-    if (enteredEmailisValid && enteredPasswordIsValid) {
+    if (enteredPasswordIsValid) {
       formIsValid = true;
     }
     if (formIsValid) {
       const userData = {
-        email: enteredEmail,
-        password: enteredPassword,
+       password: enteredCode,
       };
 
       
@@ -51,37 +43,25 @@ const Authorization = (props) => {
   return (
     <AuthorizationBackground>
       <Card>
-        <form
+        <form 
           onSubmit={formSubmissionHandler}
-          className={classes.authorizationForm}
+          className={`${classes.authorizationForm} ${classes.marginbottom}` }
         >
           <div className={classes.formtitle}>
-            <h1>ავტორიზაცია</h1>
+            <h1>შეიყვანეთ კოდი</h1>
           </div>
-          <div className={`${enteredEmailHasError ? classes.invalid : ""}`}>
-            <label htmlFor="enteredemail">ელ-ფოსტა</label>
-            <input
-              id="enteredemail"
-              value={enteredEmail}
-              onChange={enteredEmailChangeHAndler}
-              onBlur={enteredEmailBlureHandler}
-              type="email"
-            />
-            {enteredEmailHasError && (
-              <p className={classes.texterror}>Please Enter Email!</p>
-            )}
-          </div>
+          
           <div className={`${enteredPasswordHasError ? classes.invalid : ""}`}>
-            <label htmlFor="enteredpassword">პასვორდი</label>
+            <label htmlFor="enteredpassword">კოდი</label>
             <input
             id="enteredpassword"
-              value={enteredPassword}
+              value={enteredCode}
               onChange={enteredPasswordChangeHandler}
               onBlur={enteredPasswordBlureHandler}
               type="password"
             />
             {enteredPasswordHasError && (
-              <p className={classes.texterror}>Please Enter Password!</p>
+              <p className={classes.texterror}>Please Enter Code!</p>
             )}
           </div>
           <div className={classes.button}>
@@ -93,4 +73,4 @@ const Authorization = (props) => {
   );
 };
 
-export default Authorization;
+export default EmailCodeAuthorization;

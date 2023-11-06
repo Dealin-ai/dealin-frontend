@@ -1,5 +1,5 @@
-
+import EmailCodeAuthorization from "../components/form/EmailCodeAuthorization";
 const Registrationcode = () =>{
-    return <h1>enter registration code here</h1>
+    return <EmailCodeAuthorization />
 }
 export default Registrationcode;

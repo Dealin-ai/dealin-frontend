@@ -1,0 +1,45 @@
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.faqmain h2{
+    font-size: 30px;
+    font-family: 'BPG Nino Mtavruli';
+    font-weight: 700;
+    margin: 24px 0;
+}
+.text{
+    font-size: 30px;
+    font-family: "BPG Nino";
+    height: 0;
+    overflow: hidden;
+    transition-duration: 3s;
+}
+.text.fulltext{
+    height: initial;
+   
+}
+.icon{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 1620px) {
+    .text{font-size: 24px;}
+}
+@media (max-width: 1400px){
+    .faqmain h2{
+        font-size: 26px;
+
+    }
+    .text{font-size: 22px;}
+}
+
+@media (max-width: 992px) {
+    .faqmain h2{
+        font-size: 16px;
+
+    }
+    .text{font-size: 18px;}
+}

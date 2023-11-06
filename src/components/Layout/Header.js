@@ -26,7 +26,7 @@ const Header = (props) => {
             <ul className={classes.links}>
               <li>
                 {" "}
-                <Link className={classes.link}>მეწარმეობა</Link>
+                <Link to='/entrepreneurship' className={classes.link}>მეწარმეობა</Link>
               </li>
               <li>
                 {" "}
@@ -52,7 +52,7 @@ const Header = (props) => {
               </li>
             </ul>
             <div className={classes.lang}>
-              <Link>
+              <Link to='/faq'>
                 <span>FAQ</span>
               </Link>
               <Link>
@@ -72,7 +72,7 @@ const Header = (props) => {
             <ul className={classes.burgerlinks}>
               <li>
                 {" "}
-                <Link className={classes.burgerlink}>მეწარმეობა</Link>
+                <Link to='/entrepreneurship' className={classes.burgerlink}>მეწარმეობა</Link>
               </li>
               <li>
                 {" "}
@@ -98,7 +98,7 @@ const Header = (props) => {
               </li>
             </ul>
             <div className={classes.burgerlang}>
-              <Link>
+              <Link to='/faq'>
                 <span>FAQ</span>
               </Link>
               <Link>

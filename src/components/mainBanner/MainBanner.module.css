@@ -159,14 +159,16 @@
 }
 @media (max-width: 1400px) {
   .title h1 {
+    display: block;
+    padding: 0 120px 0 0;
     font-size: 40px;
     line-height: 56px;
   }
   .title {
-    width: 35%;
+    width: 50%;
   }
   .imagecard {
-    width: 65%;
+    width: 50%;
   }
   .imgae1 {
     width: 195px;
@@ -213,6 +215,9 @@
   }
   .title {
     width: 100%;
+  }
+  .title h1{
+   padding: 0;
   }
   .banner {
     margin: 40px 0 60px 0;

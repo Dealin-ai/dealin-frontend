@@ -8,6 +8,8 @@ import AuthorisationPage from "./pages/Authorisation";
 import RegistrationPage from "./pages/Registration";
 import Registrationcode from "./pages/Registrationcode";
 import NewsDetailPage from "./pages/NewsDetail";
+import Entrepreneurship from "./pages/Entrepreneurship";
+import FAQ from "./pages/FAQ";
 import Root from "./pages/Root";
 
 const router =  createBrowserRouter([
@@ -16,9 +18,11 @@ const router =  createBrowserRouter([
    children: [
     {path: '/',element: <HomePage /> },
     {path: '/aboutus', element: <AboutUsPage />},
+    {path: '/entrepreneurship', element: <Entrepreneurship />},
     {path: '/news', element: <NewsPage />},
     {path: '/news/:newsId', element: <NewsDetailPage />},
     {path: '/registration', element: <RegistrationPage />},
+    {path: '/faq', element: <FAQ />},
     {path: '/registrationcode', element: <Registrationcode />},
     {path: '/authorisation', element: <AuthorisationPage />}
     

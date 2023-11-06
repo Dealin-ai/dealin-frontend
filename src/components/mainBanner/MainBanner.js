@@ -7,7 +7,7 @@ import assetSeaze from "../../assets/images/SEIZE.png";
 import assetDeal from "../../assets/images/DEAL.png";
 import assetThe from "../../assets/images/THE.png";
 
-const MaunBanner = () => {
+const MainBanner = () => {
   return (
     <Container>
       <div className={classes.banner}>
@@ -41,4 +41,4 @@ const MaunBanner = () => {
   );
 };
 
-export default MaunBanner;
+export default MainBanner;
